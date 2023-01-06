@@ -22,6 +22,6 @@ En ese caso por favor levanta un issue aquí en Github, con el mayor detalle que
 Si eres ninja y lo solucionas, ¡levanta un Pull Request!
 
 ## Imágenes utilizadas
-[Iconos de cohetes creados por Freepik - Flaticon](https://www.flaticon.com/free-icons/rocket)
-[Iconos de misiles creados por Freepik - Flaticon](https://www.flaticon.com/free-icons/rocket-launch)
-[Fondo creado por Screaming Brain Studios - OpenGameArt](https://opengameart.org/content/seamless-space-backgrounds)
+- [Iconos de cohetes creados por Freepik - Flaticon](https://www.flaticon.com/free-icons/rocket)
+- [Iconos de misiles creados por Freepik - Flaticon](https://www.flaticon.com/free-icons/rocket-launch)
+- [Fondo creado por Screaming Brain Studios - OpenGameArt](https://opengameart.org/content/seamless-space-backgrounds)
