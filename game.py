@@ -242,7 +242,7 @@ class Game:
             int(self.face_bottom_y*self.webcam.height()) - int(self.face_top_y*self.webcam.height())
         ))
         only_face_surf.blit(face_surf, (0,0), face_rect)
-        face_ratio = only_face_surf.get_rect().height / only_face_surf.get_rect().width
+        face_ratio = ( only_face_surf.get_rect().height / only_face_surf.get_rect().width ) if only_face_surf.get_rect().width != 0 else 0 # al menos si controlo division by 0 ejecuta.h
         face_area_width = 130
         face_area_height = face_area_width * face_ratio
         if (face_area_height > self.max_face_surf_height):
