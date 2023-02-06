@@ -1,6 +1,6 @@
 from threading import Thread
 import cv2
-import platform #Sugerencia de bradelev 
+import platform # Sugerencia de bradelev 
 class Webcam:
     def __init__(self):
         self.stopped = False
