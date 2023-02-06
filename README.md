@@ -3,7 +3,7 @@
 
 ---
 ## **Información general**
-Este repositorio contiene el código para el  juego de Misiles controlado por la cara usando Facemesh, como fue creado en mi canal de Youtube:
+Este repositorio contiene el código para el  juego de Misiles controlado por la cara usando [Facemesh](https://google.github.io/mediapipe/solutions/face_mesh.html), como fue creado en mi canal de Youtube:
 [Ringa-Tech](https://youtu.be/_BjL6W71mWY)
 
 ---
