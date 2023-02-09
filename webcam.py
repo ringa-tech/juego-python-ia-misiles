@@ -1,20 +1,19 @@
 from threading import Thread
 import cv2
-import platform
-    
+
 class Webcam:
     def __init__(self):
         self.stopped = False
         self.stream = None
         self.lastFrame = None
-        self.os_name = platform.system()
-
+        
     def start(self):
         t = Thread(target=self.update, args=())
         t.daemon = True
         t.start()
         return self
 
+# -------------------------DETECCIÓN DE CÁMARA -------------------- #
     def update(self):
         if self.stream is None:
             if self.os_name == "Windows":
@@ -23,6 +22,7 @@ class Webcam:
                 self.stream = cv2.VideoCapture(0, cv2.CAP_AVFOUNDATION)
             else: # Linux
                 self.stream = cv2.VideoCapture(0, cv2.CAP_V4L)
+
         while True:
             if self.stopped:
                 return
