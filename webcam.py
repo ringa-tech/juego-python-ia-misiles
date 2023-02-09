@@ -1,13 +1,12 @@
 from threading import Thread
 import cv2
-import platform # Sugerencia de bradelev 
+
 class Webcam:
     def __init__(self):
         self.stopped = False
         self.stream = None
         self.lastFrame = None
-        self.os_name = platform.system() # bradelev
-
+        
     def start(self):
         t = Thread(target=self.update, args=())
         t.daemon = True
@@ -23,7 +22,7 @@ class Webcam:
                 self.stream = cv2.VideoCapture(0, cv2.CAP_AVFOUNDATION)
             else: # Linux
                 self.stream = cv2.VideoCapture(0, cv2.CAP_V4L)
-# ------------------------------------------------------------------ #
+
         while True:
             if self.stopped:
                 return
