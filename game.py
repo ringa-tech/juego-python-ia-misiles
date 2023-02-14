@@ -25,6 +25,7 @@ class Game:
         self.mp_drawing = mp.solutions.drawing_utils
         self.mp_drawing_styles = mp.solutions.drawing_styles
 
+        pygame.mixer.init()
         pygame.init()
         pygame.display.set_caption("Misiles")
 
@@ -39,6 +40,14 @@ class Game:
         self.last_frame_time = self.start_time
         self.player = Player()
         self.movement = 0
+
+        #Music
+        #Source background: https://pixabay.com/music/upbeat-space-chillout-14194/
+        #Source gameover: https://pixabay.com/sound-effects/astronaut-says-game-over-73039/
+        pygame.mixer.music.load("resources/music/space-chillout.mp3")
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(loops=-1)
+        pygame.mixer.music.stop()
 
         #Timers
         self.enemy_timer = 1000
@@ -68,12 +77,16 @@ class Game:
                 if event.key == K_ESCAPE:
                     self.running = False
 
+            elif event.type == QUIT:
+                    self.running = False
+
         if self.lost or not self.started:
             for event in events:
                 #Cuando perdimos o no hemos empezado, ENTER comienza el juego
                 if event.type == KEYDOWN and event.key == K_RETURN:
                     self.initialize()
                     self.started = True
+                    pygame.mixer.music.play()
         else:
             #Aumentar la velocidad segun el tiempo qu ehemos durado
             globals.game_speed = 1 + ( (pygame.time.get_ticks() - self.start_time) / 1000) * .1
@@ -102,6 +115,8 @@ class Game:
         collide = pygame.sprite.spritecollide(self.player, self.enemies, False, pygame.sprite.collide_mask)
         if collide:
             self.lost = True
+            pygame.mixer.music.load("resources/music/astronaut-says-game-over.mp3")
+            pygame.mixer.music.play()
 
     def render(self):
         self.screen.fill((0,0,0))
@@ -162,6 +177,8 @@ class Game:
                 self.render()
                 self.clock.tick(60)
             pygame.quit()
+            pygame.mixer.music.stop()
+            pygame.mixer.quit()
 
     def process_camera(self):
         image = self.webcam.read()
