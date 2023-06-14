@@ -1,3 +1,4 @@
 from game import Game
 
-Game().loop()
+if __name__ == "__app__":
+    Game().loop()
