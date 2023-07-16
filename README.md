@@ -86,7 +86,7 @@ python .\app.py
 ```
 **LINUX**
 ```
-python ./app
+python ./app.py
 ```
 Si no te funciona, prueba usando "python3" o "py" en lugar de "python" en el comando anterior.
 
