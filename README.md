@@ -37,7 +37,7 @@ Activar ambiente virtual:
 ```
 Actualizar pip:
 ```
-python.exe -m pip --upgrade pip
+python.exe -m pip install --upgrade pip
 ```
 Para instalar las dependencias es necesario ejecutar
 ```
@@ -65,7 +65,7 @@ source venv/bin/activate
 ```
 Actualizar pip:
 ```
-python -m pip --upgrade pip
+python -m pip install --upgrade pip
 ```
 Para instalar las dependencias es necesario ejecutar
 ```
