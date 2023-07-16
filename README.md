@@ -65,7 +65,7 @@ source venv/bin/activate
 ```
 Actualizar pip:
 ```
-python -m pip install --upgrade pip
+pip install --upgrade pip
 ```
 Para instalar las dependencias es necesario ejecutar
 ```
